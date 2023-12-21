@@ -1,42 +1,23 @@
 <!DOCTYP html>
 <html> 
 <head>
-  <title> Prem Career Sites </title>
+  <title> GTS Careers </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <style>
-    h1 {
-      font-size: 40px;
-      font-family: Roboto;
-      font-weight: normal;
-      color: rgb(100, 100, 100);
-      text-align: center;
-    }
     #banner {
-      width: 100%;
       height: 360px;
-      object-fit: cover;
-    }  
-    h2 {
-      font-family: Roboto;
-      font-size: 32px;
-      color: rgb(100, 100, 100);
-      text-align: center;
-      font-weight: normal;
-    }
-    .bodytext {
-      font-family: Roboto;
-      color: rgb(80, 80, 80);
-    }
-    #container {
-      max-width: 720px;
-      margin: 0 auto;
-    }
+      width: 100%;
+      object-fit: cover
   </style>
+</head>
   <body>
-<div id ="container">
-    <h1> GTS Careers </h1>
-    <img id="banner" src = https://careerwebsite-1.erodeprem.repl.co/static/gts.jpg height="320" >
-    <h2>About GTS </h2>
-    <p class="bodytext">
+<div class="container">
+    <h1 class="text-center mt-2 mb-2"> {{company_name}}GTS Careers </h1>
+    <img class="img-fluid" id="banner" src = https://careerwebsite-1.erodeprem.repl.co/static/gts.jpg height="320" >
+    <h2 class="text-center">About GTS </h2>
+    <p class="lead">
 
       GTS - Galaxy Technology Services consulting solutions are designed to fill resource gaps, by providing the right candidates who deliver value to organization. Our propensity to nurture and build strong relationships with our clients help us better understand their business demands and give us the ability to provide services that are on time and rise above the rest.
 
@@ -44,17 +25,21 @@
 
       The market for top level talent is extremely competitive and everyone is striving to hire the best talent for their business needs, GTS- Galaxy Technology Services helps bring you talent solutions for your every need, especially when hiring is though. Whether you are a large corporation with an in-house HR department or a small organization looking for manpower, GTS- Galaxy Technology Services can help you build a flexible workforce that adjusts with your business demands. 
     </p>
-    <h2>
-      Open Positions 
-    </h2>
-  <p class="bodytext">
-      TODO - Show Jobs here
-    </p>
-  <div style="text-align:center;">  
-    <button>Contact Us</button>
-    <p> Copyright 2024, GTS </p>
+    <h2 class="text-center mt-2 mb-4">
+      Open Positions </h2>
+      <div>
+        {% for job in jobs %}
+          {% include 'jobitem.html' %}
+      
+        {% endfor %}
+      
+      </div>
+    
+  <div class="text-center">  
+    <button class="btn btn-secondary btn-lg">Contact Us</button>
+    
+    <p class="mt-4"> Copyright 2024, GTS </p>
     </div>
   </div>
   </body>
-</head>
 </html>
